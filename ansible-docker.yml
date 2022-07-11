@@ -8,7 +8,7 @@
       shell: git clone https://github.com/Saumil343/test2.git
 
     - name: docker kill
-      shell: docker kill $(docker ps -q)
+      shell: docker stop nodeapp2 || true && docker rm nodeapp2 || true
     
     - name: docker build
       shell: docker build -t saumil343/demoapp4 ~/test2/
