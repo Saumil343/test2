@@ -8,7 +8,7 @@
       shell: git clone https://github.com/Saumil343/test2.git
 
     - name: docker kill
-      shell: docker ps -q --filter "name=nodeapp2" | grep -q . && docker stop nodeapp2 && docker rm -fv nodeapp2  
+      shell: docker kill $(docker ps -q)
     
     - name: docker build
       shell: docker build -t saumil343/demoapp4 ~/test2/
