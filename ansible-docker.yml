@@ -7,10 +7,12 @@
     - name: pull
       shell: git clone https://github.com/Saumil343/test2.git
 
+    - name: docker kill
+      shell: docker kill nodeapp2  
+    
     - name: docker build
       shell: docker build -t saumil343/demoapp4 ~/test2/
       
     - name: docker run 
-      shell: docker run -it -d -p 3000:3000 saumil343/demoapp4
+      shell: docker run -it -d --name nodeapp2 -p 3000:3000 saumil343/demoapp4
 
-      
